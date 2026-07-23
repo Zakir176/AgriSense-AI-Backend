@@ -13,7 +13,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: FRONTEND_URL
-        value: https://your-frontend-domain.onrender.com  # Update with your deployed frontend URL
+        value: https://agri-sense-ai-frontend.vercel.app
       - key: PYTHON_VERSION
         value: 3.11.8
 

@@ -2,9 +2,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from .config import settings
 
-db_url = settings.DATABASE_URL
+import os
+
+db_url = os.getenv("DATABASE_URL", settings.DATABASE_URL)
 if db_url.startswith("postgres://"):
     db_url = db_url.replace("postgres://", "postgresql://", 1)
+
+if "localhost" in db_url or "127.0.0.1" in db_url:
+    print("WARNING: Connecting to localhost database. If running on Render, ensure DATABASE_URL environment variable is set.")
 
 connect_args = {}
 if db_url.startswith("sqlite"):
