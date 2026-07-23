@@ -1,0 +1,50 @@
+# Python caching & environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+
+# Local environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Uploads directory (user-generated content)
+uploads/
+
+# Model weights
+*.pt
+
+# Scratch folders
+scratch/
+
+# Editor configs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI Agent Configs and Rules
+.agent/
+.agents/
+.antigravityrules
+.clinerules
+.codexrules
+.cursorrules
+.traerules
+.windsurfrules

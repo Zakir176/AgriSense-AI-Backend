@@ -94,10 +94,13 @@ origins = [
     "http://127.0.0.1:3000",
 ]
 
-# Add production Vercel URL from env if set
+# Add production frontend URL(s) from env (comma-separated for multiple origins)
 frontend_url = settings.FRONTEND_URL.strip()
 if frontend_url:
-    origins.append(frontend_url)
+    for url in frontend_url.split(","):
+        url = url.strip().rstrip("/")
+        if url and url not in origins:
+            origins.append(url)
 
 app.add_middleware(
     CORSMiddleware,
